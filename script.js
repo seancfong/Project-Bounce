@@ -1,6 +1,12 @@
 var canvas = document.querySelector("canvas");
 
-canvas.width = window.innerWidth - 17;
+if (window.innerWidth > 768) {
+  canvas.width = window.innerWidth - 17;
+  startMessage = "Click the screen!";
+} else {
+  canvas.width = window.innerWidth;
+  startMessage = "Tap the screen!";
+}
 canvas.height = window.innerHeight;
 
 console.log(canvas);
@@ -11,6 +17,7 @@ var c = canvas.getContext('2d');
 var gravity = 1;
 var friction = 0.99;
 var lastColor = "#397F75";
+var startMessage;
 
 function randomColor() {
   colors = [
@@ -35,7 +42,14 @@ canvas.addEventListener('click', function(event) {
 
 window.addEventListener('resize', function(event) {
   console.log("RESIZING..");
-  canvas.width = window.innerWidth - 17;
+  console.log(event.target.innerWidth);
+  if (event.target.innerWidth > 768) {
+    canvas.width = window.innerWidth - 17;
+    startMessage = "Click the screen!";
+  } else {
+    canvas.width = window.innerWidth;
+    startMessage = "Tap the screen!";
+  }
   canvas.height = window.innerHeight;
 
 });
@@ -96,7 +110,7 @@ function animate () {
 
   c.fillStyle = "#777777";
   c.font = "30px Arial";
-  c.fillText("Click the screen!", canvas.width / 2, (canvas.height / 2) + 40);
+  c.fillText(startMessage, canvas.width / 2, (canvas.height / 2) + 40);
 
 
   // Ball stuff
@@ -111,6 +125,7 @@ function animate () {
   // console.log(balls.length);
 
 }
+
 
 init();
 animate();
