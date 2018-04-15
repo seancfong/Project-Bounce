@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  background-color: #eee;
+
+}
+
+#content {
+  margin: 0 auto;
+  max-width: 800px;
+  height: 500px;
+}
+
+#content h1 {
+  padding-top: 50px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 50px;
+}
+
+#content p {
+  font-family: 'Arial';
+  font-size: 18px;
+}
