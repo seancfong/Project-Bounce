@@ -1,4 +1,4 @@
 # Project Bounce
 
 This project is published at:
-https://cnfgsean.github.io/Project-Bounce/
+https://seancfong.github.io/Project-Bounce/
